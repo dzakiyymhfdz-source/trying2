@@ -1,4 +1,7 @@
 import 'package:bitaqwa/presentation/screen/doa_Screen.dart';
+import 'package:bitaqwa/presentation/screen/jadwal_sholat.dart';
+import 'package:bitaqwa/presentation/screen/kajian_screen.dart';
+import 'package:bitaqwa/presentation/screen/zakat_screen.dart';
 import 'package:bitaqwa/utils/colors_Constant.dart';
 import 'package:flutter/material.dart';
 
@@ -125,59 +128,83 @@ class DashboardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Column(
-                children: [
-                  Image.asset(
-                    "assets/image/ic_menu_zakat.png",
-                    width: 95,
-                    height: 95,
-                  ),
-                  Text(
-                    "Zakat",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: "PoppinsSemiBold",
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => ZakatScreen()
+                      ));
+                },
+                child: Column(
+                  children: [
+                    Image.asset(
+                      "assets/image/ic_menu_zakat.png",
+                      width: 95,
+                      height: 95,
                     ),
-                  )
-                ],
+                    Text(
+                      "Zakat",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: "PoppinsSemiBold",
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
               ),
-              Column(
-                children: [
-                  Image.asset(
-                    "assets/image/ic_menu_jadwal_sholat.png",
-                    width: 95,
-                    height: 95,
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => JadwalScreen()
+                      ));
+                },
+                child:Column(
+                    children: [
+                      Image.asset(
+                        "assets/image/ic_menu_jadwal_sholat.png",
+                        width: 95,
+                        height: 95,
+                      ),
+                      Text(
+                        "Jadwal Sholat",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: "PoppinsSemiBold",
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
                   ),
-                  Text(
-                    "Jadwal Sholat",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: "PoppinsSemiBold",
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  )
-                ],
               ),
-              Column(
-                children: [
-                  Image.asset(
-                    "assets/image/ic_menu_video_kajian.png",
-                    width: 95,
-                    height: 95,
-                  ),
-                  Text(
-                    "Video Kajian",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: "PoppinsSemiBold",
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => KajianScreen()
+                      ));
+                },
+                child:Column(
+                  children: [
+                    Image.asset(
+                      "assets/image/ic_menu_video_kajian.png",
+                      width: 95,
+                      height: 95,
                     ),
-                  )
-                ],
+                    Text(
+                      "Video Kajian",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: "PoppinsSemiBold",
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ],
           ),

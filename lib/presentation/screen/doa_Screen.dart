@@ -55,7 +55,7 @@ class DoaScreen extends StatelessWidget {
                         onTap: (){
                           Navigator.push(
                               context, MaterialPageRoute(builder:
-                              (context) => DoaListScreen()
+                              (context) => DoaListScreen(category: 'Pagi & Malam',)
                           )
                           );
                         }
@@ -66,7 +66,7 @@ class DoaScreen extends StatelessWidget {
                         onTap: (){
                           Navigator.push(
                               context, MaterialPageRoute(builder:
-                              (context) => DoaListScreen()
+                              (context) => DoaListScreen(category: 'Rumah',)
                           )
                           );
                         }
@@ -77,7 +77,7 @@ class DoaScreen extends StatelessWidget {
                         onTap: (){
                           Navigator.push(
                               context, MaterialPageRoute(builder:
-                              (context) => DoaListScreen()
+                              (context) => DoaListScreen(category: 'Makanan & Minuman',)
                           )
                           );
                         }
@@ -88,7 +88,7 @@ class DoaScreen extends StatelessWidget {
                         onTap: (){
                           Navigator.push(
                               context, MaterialPageRoute(builder:
-                              (context) => DoaListScreen()
+                              (context) => DoaListScreen(category: 'Perjalanan',)
                           )
                           );
                         }
@@ -99,7 +99,7 @@ class DoaScreen extends StatelessWidget {
                         onTap: (){
                           Navigator.push(
                               context, MaterialPageRoute(builder:
-                              (context) => DoaListScreen()
+                              (context) => DoaListScreen(category: 'Sholat',)
                           )
                           );
                         }
@@ -110,7 +110,51 @@ class DoaScreen extends StatelessWidget {
                         onTap: (){
                           Navigator.push(
                               context, MaterialPageRoute(builder:
-                              (context) => DoaListScreen()
+                              (context) => DoaListScreen(category: 'Etika Baik',)
+                          )
+                          );
+                        }
+                    ),
+                    CardDoa(
+                        image: "assets/image/logo.png",
+                        title: "Doa belajar",
+                        onTap: (){
+                          Navigator.push(
+                              context, MaterialPageRoute(builder:
+                              (context) => DoaListScreen(category: 'Doa belajar',)
+                          )
+                          );
+                        }
+                    ),
+                    CardDoa(
+                        image: "assets/image/ic_doa_perlindungan.png",
+                        title: "Doa Perlindungan",
+                        onTap: (){
+                          Navigator.push(
+                              context, MaterialPageRoute(builder:
+                              (context) => DoaListScreen(category: 'Perlindungan',)
+                          )
+                          );
+                        }
+                    ),
+                    CardDoa(
+                        image: "assets/image/pakaian.png",
+                        title: "Doa Pakaian",
+                        onTap: (){
+                          Navigator.push(
+                              context, MaterialPageRoute(builder:
+                              (context) => DoaListScreen(category: 'Pakaian',)
+                          )
+                          );
+                        }
+                    ),
+                    CardDoa(
+                        image: "assets/image/love.png",
+                        title: "Doa Kebaikan & Keberkahan",
+                        onTap: (){
+                          Navigator.push(
+                              context, MaterialPageRoute(builder:
+                              (context) => DoaListScreen(category: 'Kebaikan & Keberkahan',)
                           )
                           );
                         }
