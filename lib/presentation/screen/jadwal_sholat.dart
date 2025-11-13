@@ -1,9 +1,56 @@
+import 'dart:convert';
+
 import 'package:bitaqwa/presentation/widget/widget_jadwal.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:http/http.dart' as http;
 import '../../utils/colors_Constant.dart';
 
-class JadwalScreen extends StatelessWidget {
+class JadwalScreen extends StatefulWidget {
   const JadwalScreen({super.key});
+
+  @override
+  State<JadwalScreen> createState() => _JadwalScreenState();
+}
+
+class _JadwalScreenState extends State<JadwalScreen> {
+
+  String?_locationName;
+
+  List<Map<String, String>>?_jadwalShalat;
+  bool isLoading = true;
+
+  Future<List<dynamic>> fetchJadwalShalat(
+      String location,
+      String year,
+      String month,
+      ) async {
+    final url = "https://raw.githubusercontent.com/lakuapik/jadwalsholatorg/master/adzan/$location/$year/$month.json";
+    final response = await http.get(Uri.parse(url));
+
+    if (response.statusCode == 200 ){
+      final data = jsonDecode(response.body);
+      return data;
+    }else{
+      throw Exception("Gagal mendapatkan data jadwal Sholat");
+    }
+  }
+
+  Future fetchLocation() async {
+    setState(() => isLoading = true);
+
+    try {
+      final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    } catch (e){
+
+    }
+  }
+
+  @override
+  void initState() {
+    // fetchJadwalShalat();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
